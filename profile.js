@@ -42,9 +42,10 @@ pc.script.create('profile', function (app) {
             canvas.height = 32;
             document.body.appendChild(canvas);
             
-            this.value = 'dignity ai demo: tanx';
+            this.value = 'dignityai demo: tanx ai';
             
             var self = this;
+            self.overlay.overlay(false);
             var change = function() {
                 if (! self.client.connected)
                     return;
