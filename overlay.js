@@ -426,8 +426,8 @@ pc.script.create('overlay', function (app) {
             //this.minimap = app.root.getChildren()[0].script.minimap;
             
             this.overlay(.2);
-            this.cinematic(true);
-            this.timer(5);
+            this.cinematic(false);
+            this.timer(10);
         },
         
         update: function() {

@@ -251,23 +251,7 @@ pc.script.create('tank', function (context) {
                 slerp.call(tmpQuat, this.entity.getRotation(), tmpQuat, 0.2);
                 this.entity.setRotation(tmpQuat);
             }
-            
-            // movement
-            //tmpVec.lerp(pos, this.movePoint, 0.01);
-            //this.entity.setPosition(tmpVec);
-//            var pathLength = this.movePath.movementPath.length;
-//            if( pathLength > 0 && this.movePath.movementPathCurrent < pathLength) {
-//                var x = 0.5 + (this.movePath.movementPath[this.movePath.movementPathCurrent][1]*1);
-//                var z = 47.5 - (this.movePath.movementPath[this.movePath.movementPathCurrent][0]*1);
-//                this.movePoint = new pc.Vec3(x, 0, z);
-//                tmpVec.lerp(pos, this.movePoint, 0.2);
-//                this.entity.setPosition(tmpVec);
-//                if(pos.x.toFixed(1) === x.toFixed(1) && pos.z.toFixed(1) === z.toFixed(1)) {
-//                    this.movePath.movementPathCurrent++;
-//                    console.log('current: '+this.movePath.movementPathCurrent);
-//                }
-//            }
-            
+
             this.ai.move(this);
             this.ai.sense(this, context);
             
@@ -372,9 +356,8 @@ pc.script.create('tank', function (context) {
         },
         
         moveTo: function(pos) {
-            this.movePoint.copy(pos);
-//            if (this.dead)
-//                this.entity.setPosition(this.movePoint);
+            if (this.dead)
+                this.entity.setPosition(this.movePoint);
         },
         
         hidden: function(state) {
@@ -397,11 +380,7 @@ pc.script.create('tank', function (context) {
         },
         
         setTankName: function(name) {
-            this.tankName.innerHTML = name;   
-        },
-        
-        setMovePath: function(path) {
-            this.movePath = path;
+            this.tankName.innerHTML = name;
         }
     };
 

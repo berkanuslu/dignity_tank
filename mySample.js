@@ -8,16 +8,13 @@ pc.script.create('mySample', function (app) {
         // Called once after all resources are loaded and before the first update
         initialize: function () {
             var student1 = new Student("Berkan USLU", "DignityAI");
-            student1.sayHello();   // "Hello, I'm Berkan USLU. I'm developing DignityAI."
+            student1.sayHello();
             
             this.tank = app.root.findByName('tank');
             this.tank.enabled = false;
             this.map = app.root.findByName('map');
             this.tanks = app.root.findByName('tanks');
-            
-            //this.tank.script.tank.moveTo(0.5,45);
-//            console.log(this.map.script.createmap.berkan); //access another script file fields
-            
+
             this.repairModel = app.root.findByName('pickable-repair');
             this.shieldModel = app.root.findByName('pickable-shield');
             this.damageModel = app.root.findByName('pickable-damage');
@@ -147,7 +144,7 @@ pc.script.create('mySample', function (app) {
             _mission.continuous = false;
             _mission.actionTime = _action;
             _mission.actionTimeName = 'custom';
-            _mission.time = 10000; //create every 10 seconds
+            _mission.time = 10000; //create after 10 seconds
 
             var _creator = new DignityStructure();
             _creator.missionList.push(_mission);
@@ -226,7 +223,7 @@ pc.script.create('mySample', function (app) {
             _mission.continuous = false;
             _mission.actionTime = _action;
             _mission.actionTimeName = 'custom';
-            _mission.time = 10000; //create every 10 seconds
+            _mission.time = 10000; //create after 10 seconds
 
             var _creator = new DignityStructure();
             _creator.missionList.push(_mission);

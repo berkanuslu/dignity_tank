@@ -1,13 +1,8 @@
 pc.script.create('createmap', function (app) {
     // Creates a new Createmap instance
-//    var totalTime = 0;
-//    var totalTimeTank = 0;
-//    var initializeCompleted = false;
-    
     var Createmap = function (entity) {
         this.entity = entity;
         this.map = [[]];
-        this.berkan = "berkan uslu";
     };
 
     Createmap.prototype = {
@@ -20,21 +15,7 @@ pc.script.create('createmap', function (app) {
         },
 
         update: function (dt) {
-//            if(initializeCompleted) {
-//                totalTime += dt;
-//                totalTimeTank += dt;
-//                if(totalTime > 5) { //every 30 seconds create pickables
-//                    this.pickables = app.root.findByName('pickables');
-//                    this.pickables.script.createpickables.createRandom(this.mapWidth, this.mapHeight);
-//                    totalTime = 0;
-//                }
-//
-//                if(totalTimeTank > 10) {
-//                    this.example = app.root.findByName('tanx');
-//                    this.example.script.mySample.tankMove();
-//                    totalTimeTank = -1000000;
-//                }
-//            }
+
         },
         
         initializeMap: function(_worldWidth, _worldHeight) {
@@ -49,7 +30,7 @@ pc.script.create('createmap', function (app) {
                     var pos = floor.getPosition();
                     this.mapParent.addChild(floor);
                     floor.setPosition(new pc.Vec3(pos.x+(y*1), pos.y, pos.z-(x*1)));
-                    console.log("yol eklendi");
+                    console.log("road added");
                 }
             }
         
@@ -64,7 +45,7 @@ pc.script.create('createmap', function (app) {
                         var pos1 = wall.getPosition();
                         this.mapParent.addChild(wall);
                         wall.setPosition(new pc.Vec3(pos1.x+(y1*1), pos1.y, pos1.z-(x1*1)));
-                        console.log("duvar eklendi");
+                        console.log("wall added");
                     }
                 }
             }

@@ -14,7 +14,6 @@ pc.script.create('createpickables', function (app) {
             this.damageModel = app.root.findByName('pickable-damage');
             this.pickDefaultModel = app.root.findByName('pickable-default');
             this.pickParent = app.root.findByName('pickables');
-            
         },
 
         // Called every frame, dt is time in seconds since last update
@@ -31,7 +30,6 @@ pc.script.create('createpickables', function (app) {
             }
             
             this.map = app.root.findByName('map');
-//            console.log(this.map.script.createmap.berkan); //access another script file fields
 
             var usageInfo = this.map.script.createmap.map[randomX][randomY];
             if(usageInfo === 1) {
